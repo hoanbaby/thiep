@@ -24,15 +24,55 @@
       height: 100vh;
     }
 
-    /* Cột bên trái và bên phải đều chứa video */
-    .left-column, .right-column {
-      width: 20%; /* Chiếm 20% chiều rộng của trang */
-      padding: 0;
-      color: white;
-      text-align: center;
-      cursor: pointer; /* Hiển thị con trỏ khi người dùng di chuột qua */
-      overflow: hidden; /* Ẩn bất kỳ phần video nào vượt quá cột */
-    }
+    /* Cột bên trái và bên phải */
+.left-column, .right-column {
+  width: 20%; /* Chiếm 20% chiều rộng của trang trên máy tính */
+  padding: 0;
+  color: white;
+  text-align: center;
+  cursor: pointer; /* Hiển thị con trỏ khi người dùng di chuột qua */
+  overflow: hidden; /* Ẩn bất kỳ phần video nào vượt quá cột */
+}
+
+/* Điều chỉnh cho màn hình máy tính lớn */
+@media (min-width: 1025px) {
+  .left-column, .right-column {
+    width: 20%; /* Cột chiếm 20% chiều rộng trên màn hình máy tính */
+    padding: 10px; /* Điều chỉnh padding cho các cột */
+  }
+}
+
+/* Điều chỉnh cho máy tính bảng */
+@media (max-width: 1024px) {
+  .left-column, .right-column {
+    width: 25%; /* Cột chiếm 25% chiều rộng trên máy tính bảng */
+    padding: 8px; /* Giảm padding cho máy tính bảng */
+  }
+}
+
+/* Điều chỉnh cho điện thoại di động */
+@media (max-width: 768px) {
+  .left-column, .right-column {
+    width: 30%; /* Cột chiếm 30% chiều rộng trên màn hình điện thoại */
+    padding: 6px; /* Giảm padding cho điện thoại */
+  }
+}
+
+/* Điều chỉnh cho điện thoại nhỏ */
+@media (max-width: 480px) {
+  .left-column, .right-column {
+    width: 40%; /* Cột chiếm 40% chiều rộng cho điện thoại nhỏ */
+    padding: 4px; /* Giảm padding cho điện thoại nhỏ */
+  }
+}
+
+/* Ẩn cột bên trái và phải trên các màn hình nhỏ hơn */
+@media (max-width: 768px) {
+  .left-column, .right-column {
+    display: none; /* Ẩn cột bên trái và phải trên màn hình nhỏ */
+  }
+}
+
 
     /* Cột giữa chứa iframe */
     .iframe-container {
