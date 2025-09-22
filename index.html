@@ -48,16 +48,37 @@
 
     /* Tiêu đề và lời mời */
     .invitation-title {
-      font-family: 'RQND Pro', sans-serif;
-      text-align: center;
-      padding-top: 20px;
-      padding-bottom: 10px;
-      font-size: 36px;
-      font-weight: bold;
-      color: white; /* Text color is white */
-      background-color: #082460; /* Updated background color */
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    }
+  font-family: 'RQND Pro', sans-serif;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: 6vw; /* Sử dụng vw để kích thước chữ thay đổi linh hoạt */
+  font-weight: bold;
+  color: white; /* Text color is white */
+  background-color: #082460; /* Background color */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  max-font-size: 36px; /* Giữ kích thước tối đa */
+}
+
+/* Điều chỉnh kích thước font cho các thiết bị nhỏ hơn */
+@media (max-width: 1024px) {
+  .invitation-title {
+    font-size: 8vw; /* Giảm kích thước font trên các màn hình nhỏ hơn */
+  }
+}
+
+@media (max-width: 768px) {
+  .invitation-title {
+    font-size: 10vw; /* Điều chỉnh lại font-size cho màn hình điện thoại */
+  }
+}
+
+@media (max-width: 480px) {
+  .invitation-title {
+    font-size: 12vw; /* Điều chỉnh cho điện thoại nhỏ */
+  }
+}
+
 
     /* Nút chuyển trang */
     .next-button, .prev-button {
