@@ -27,8 +27,8 @@
 
 /* Cột bên trái và bên phải */
 .left-column, .right-column {
-  width: 300px; /* Cột trái và phải chiếm 20% chiều rộng mỗi cột */
-  height: 120vh; /* Chiều cao cột 90% của chiều cao màn hình */
+  width: 20%; /* Mỗi cột chiếm 20% chiều rộng của trang */
+  height: 100vh; /* Cột chiếm 100% chiều cao màn hình */
   padding: 0; /* Xóa padding để không có khoảng cách dư thừa */
   margin: 0; /* Đảm bảo không có margin tạo khoảng cách */
   color: white;
@@ -40,8 +40,8 @@
 
 /* Cột giữa chứa iframe */
 .iframe-container {
-  width: 3000px; /* Cột giữa chiếm 80% chiều rộng của trang */
-  height: 120vh; /* Chiều cao là 90% chiều cao của màn hình */
+  width: 60%; /* Cột giữa chiếm 60% chiều rộng của trang */
+  height: 100vh; /* Chiều cao là 100% chiều cao của màn hình */
   background-color: #fff; /* Nền sáng cho khu vực chứa iframe */
   display: flex;
   justify-content: center; /* Canh giữa nội dung bên trong */
@@ -50,11 +50,62 @@
   margin: 0;
   box-sizing: border-box; /* Đảm bảo tính toán chiều rộng và chiều cao đúng */
 }
-    iframe {
+
+/* Iframe bên trong */
+iframe {
   width: 100%; /* Đảm bảo iframe chiếm 100% chiều rộng của .iframe-container */
-  height: 60%; /* Đảm bảo iframe chiếm 100% chiều cao của .iframe-container */
+  height: 80vh; /* Chiều cao của iframe chiếm 80% chiều cao của màn hình */
   border: none; /* Xóa viền của iframe */
 }
+
+/* Điều chỉnh cho màn hình máy tính lớn */
+@media (min-width: 1025px) {
+  .left-column, .right-column {
+    width: 20%; /* Cột chiếm 20% chiều rộng trên màn hình máy tính */
+  }
+  
+  .iframe-container {
+    width: 60%; /* Cột giữa chiếm 60% chiều rộng của màn hình */
+    height: 90vh; /* Điều chỉnh chiều cao cột giữa */
+  }
+}
+
+/* Điều chỉnh cho máy tính bảng */
+@media (max-width: 1024px) {
+  .left-column, .right-column {
+    width: 25%; /* Cột chiếm 25% chiều rộng trên máy tính bảng */
+  }
+
+  .iframe-container {
+    width: 50%; /* Cột giữa chiếm 50% chiều rộng của màn hình */
+    height: 80vh; /* Điều chỉnh chiều cao của iframe */
+  }
+}
+
+/* Điều chỉnh cho điện thoại di động */
+@media (max-width: 768px) {
+  .left-column, .right-column {
+    width: 30%; /* Cột chiếm 30% chiều rộng trên màn hình điện thoại */
+  }
+
+  .iframe-container {
+    width: 40%; /* Cột giữa chiếm 40% chiều rộng của màn hình */
+    height: 70vh; /* Điều chỉnh chiều cao iframe */
+  }
+}
+
+/* Điều chỉnh cho điện thoại nhỏ */
+@media (max-width: 480px) {
+  .left-column, .right-column {
+    width: 40%; /* Cột chiếm 40% chiều rộng cho điện thoại nhỏ */
+  }
+
+  .iframe-container {
+    width: 50%; /* Cột giữa chiếm 50% chiều rộng của màn hình */
+    height: 60vh; /* Điều chỉnh chiều cao iframe */
+  }
+}
+
 
 .invitation-title {
   font-family: 'RQND Pro', sans-serif;
