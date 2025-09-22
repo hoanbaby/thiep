@@ -67,29 +67,6 @@
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     }
 
-    .invitation-text {
-      text-align: center;
-      font-size: 24px;
-      font-weight: 400;
-      color: #fff;
-      margin-top: 10px;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    .link-text {
-      display: block;
-      margin-top: 20px;
-      text-align: center;
-      color: #fff;
-      font-size: 18px;
-    }
-
-    .link-text a {
-      text-decoration: none;
-      color: #ff7f50;
-      font-weight: bold;
-    }
-
     /* Nút chuyển trang */
     .next-button, .prev-button {
       position: absolute;
@@ -151,14 +128,23 @@
 
   <!-- Cột chứa iframe với 2 cột bên trái và phải -->
   <div class="column-container">
+    <!-- Cột bên trái chứa liên kết ảnh -->
     <div class="left-column">
-      <p>Thông tin bên trái</p>
+      <a href="https://www.example.com" target="_blank">
+        <img src="https://via.placeholder.com/150" alt="Link bên trái" style="width: 100%; border-radius: 8px;">
+      </a>
     </div>
+
+    <!-- Cột giữa chứa iframe -->
     <div class="iframe-container">
       <iframe id="iframe1" src="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
     </div>
+
+    <!-- Cột bên phải chứa liên kết ảnh -->
     <div class="right-column">
-      <p>Thông tin bên phải</p>
+      <a href="https://www.example.com" target="_blank">
+        <img src="https://via.placeholder.com/150" alt="Link bên phải" style="width: 100%; border-radius: 8px;">
+      </a>
     </div>
   </div>
 
