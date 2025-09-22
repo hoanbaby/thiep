@@ -17,17 +17,6 @@
       box-sizing: border-box; /* Giúp tính toán kích thước chính xác */
     }
 
-    /* Nền video chiếm toàn bộ màn hình */
-    .video-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
     /* Khối chứa các cột bên trái và bên phải */
     .column-container {
       display: flex;
@@ -42,6 +31,7 @@
       padding: 20px;
       color: white;
       text-align: center;
+      cursor: pointer; /* Hiển thị con trỏ khi người dùng di chuột qua */
     }
 
     /* Cột giữa chứa iframe */
@@ -128,24 +118,20 @@
 
   <!-- Cột chứa iframe với 2 cột bên trái và phải -->
   <div class="column-container">
-    <!-- Cột bên trái chứa liên kết ảnh -->
-    <div class="left-column">
-      <a href="https://www.example.com" target="_blank">
-        <img src="/Thiệp làm hiệu ứng.mp4" alt="Link bên trái" style="width: 100%; border-radius: 8px;">
-      </a>
-    </div>
+    <!-- Cột bên trái chứa liên kết -->
+    <a href="/Thiệp làm hiệu ứng.mp4" class="left-column" target="_blank">
+      <p>Link bên trái</p>
+    </a>
 
     <!-- Cột giữa chứa iframe -->
     <div class="iframe-container">
       <iframe id="iframe1" src="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
     </div>
 
-    <!-- Cột bên phải chứa liên kết ảnh -->
-    <div class="right-column">
-      <a href="https://www.example.com" target="_blank">
-        <img src="/Thiệp làm hiệu ứng.mp4" alt="Link bên phải" style="width: 100%; border-radius: 8px;">
-      </a>
-    </div>
+    <!-- Cột bên phải chứa liên kết đến video -->
+    <a href="/Thiệp làm hiệu ứng.mp4" class="right-column" target="_blank">
+      <p>Link đến Thiệp làm hiệu ứng</p>
+    </a>
   </div>
 
   <!-- Nút nhấn để chuyển sang mặt thiệp mời thứ 2 -->
