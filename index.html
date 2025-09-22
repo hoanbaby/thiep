@@ -28,15 +28,26 @@
       z-index: -1;
     }
 
-    /* Khối chứa iframe */
-    .container {
-      position: relative;
-      width: 100%;
-      height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
-      margin: 0;
-      padding: 0;
-      box-shadow: none;
-      overflow: hidden;
+    /* Khối chứa các cột bên trái và bên phải */
+    .column-container {
+      display: flex;
+      justify-content: space-between;
+      height: 100vh;
+    }
+
+    /* Cột bên trái */
+    .left-column, .right-column {
+      width: 20%; /* Chiếm 20% chiều rộng của trang */
+      background-color: #082460; /* Màu nền cho cột */
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    /* Cột giữa chứa iframe */
+    .iframe-container {
+      width: 60%; /* Chiếm 60% chiều rộng của trang */
+      background-color: #f0f0f0; /* Nền sáng cho khu vực chứa iframe */
     }
 
     iframe {
@@ -46,15 +57,15 @@
     }
 
     /* Tiêu đề và lời mời */
-.invitation-title {
-    text-align: center;
-    padding-top: 20px;
-    font-size: 36px;
-    font-weight: bold;
-    color: white; /* Text color is white */
-    background-color: #082460; /* Updated background color */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-}
+    .invitation-title {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 36px;
+      font-weight: bold;
+      color: white; /* Text color is white */
+      background-color: #082460; /* Updated background color */
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
 
     .invitation-text {
       text-align: center;
@@ -119,16 +130,36 @@
         height: 70vh;
       }
     }
+
+    /* Điều chỉnh độ rộng các cột khi màn hình nhỏ hơn */
+    @media (max-width: 1024px) {
+      .left-column, .right-column {
+        display: none; /* Ẩn cột bên trái và phải trên màn hình nhỏ */
+      }
+
+      .iframe-container {
+        width: 100%; /* Chiếm toàn bộ chiều rộng */
+      }
+    }
   </style>
 </head>
 <body>
-<!-- Tiêu đề và lời mời -->
+  <!-- Tiêu đề và lời mời -->
   <div class="invitation-title">
     Thiệp Mời Kỉ Niệm 15 Năm
   </div>
-    <!-- Trang 1: iframe chứa bản thiết kế từ Canva -->
-  <div class="container" id="iframe-container-1">
-    <iframe id="iframe1" src="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+
+  <!-- Cột chứa iframe với 2 cột bên trái và phải -->
+  <div class="column-container">
+    <div class="left-column">
+      <p>Thông tin bên trái</p>
+    </div>
+    <div class="iframe-container">
+      <iframe id="iframe1" src="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+    </div>
+    <div class="right-column">
+      <p>Thông tin bên phải</p>
+    </div>
   </div>
 
   <!-- Nút nhấn để chuyển sang mặt thiệp mời thứ 2 -->
@@ -136,6 +167,7 @@
 
   <!-- Nút nhấn để quay lại mặt thiệp mời thứ 1 -->
   <button class="prev-button" onclick="switchToFirstPage()">Mặt thiệp mời thứ 1</button>
+
   <script>
     // Hàm chuyển sang mặt thiệp mời thứ 2
     function switchToSecondPage() {
@@ -149,6 +181,5 @@
       iframe.src = "https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed"; // URL của mặt thiệp mời thứ 1
     }
   </script>
-
 </body>
 </html>
