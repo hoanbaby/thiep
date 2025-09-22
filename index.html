@@ -17,12 +17,12 @@
       box-sizing: border-box; /* Giúp tính toán kích thước chính xác */
     }
 
-   /* Khối chứa các cột bên trái và bên phải */
+   /* Khối chứa các cột bên trái, giữa và bên phải */
 .column-container {
   display: flex;
-  justify-content: space-between;
-  width: 100%; /* Đảm bảo chiều rộng chiếm toàn bộ chiều rộng của trang */
-  height: 120vh; /* Chiều cao của toàn bộ trang */
+  justify-content: space-between; /* Căn chỉnh các cột trái, giữa và phải */
+  width: 100%; /* Chiếm toàn bộ chiều rộng của trang */
+  height: 100vh; /* Chiều cao của toàn bộ trang */
 }
 
 /* Cột bên trái và bên phải */
@@ -89,8 +89,8 @@ iframe {
   }
 
   .iframe-container {
-    width: 20%; /* Cột giữa chiếm 40% chiều rộng của màn hình */
-    height: 20vh; /* Điều chỉnh chiều cao iframe */
+    width: 40%; /* Cột giữa chiếm 40% chiều rộng của màn hình */
+    height: 70vh; /* Điều chỉnh chiều cao iframe */
   }
 }
 
@@ -102,9 +102,10 @@ iframe {
 
   .iframe-container {
     width: 50%; /* Cột giữa chiếm 50% chiều rộng của màn hình */
-    height: 10vh; /* Điều chỉnh chiều cao iframe */
+    height: 60vh; /* Điều chỉnh chiều cao iframe */
   }
 }
+
 
 
 .invitation-title {
