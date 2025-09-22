@@ -37,6 +37,7 @@
       padding: 0;
       box-shadow: none;
       overflow: hidden;
+      transition: transform 1s ease; /* Tạo hiệu ứng lướt trang */
     }
 
     iframe {
@@ -153,16 +154,26 @@
   </div>
 
   <script>
-    // Hàm chuyển sang mặt thiệp mời thứ 2
     function switchToSecondPage() {
-      var iframe = document.getElementById("iframe1");
-      iframe.src = "https://www.canva.com/design/DAGzUDV-HjQ/21minuCM_u54x-7zSqFogA/view?embed"; // URL của mặt thiệp mời thứ 2
+      // Thêm hiệu ứng chuyển động
+      var iframeContainer = document.getElementById("iframe-container-1");
+      iframeContainer.style.transform = "translateX(-100%)"; // Lướt sang bên trái
+      setTimeout(function() {
+        // Sau khi chuyển động xong, thay đổi src của iframe
+        var iframe = document.getElementById("iframe1");
+        iframe.src = "https://www.canva.com/design/DAGzUDV-HjQ/21minuCM_u54x-7zSqFogA/view?embed"; // URL của mặt thiệp mời thứ 2
+      }, 500); // Chờ hiệu ứng lướt hết rồi mới thay đổi src
     }
 
-    // Hàm quay lại mặt thiệp mời thứ 1
     function switchToFirstPage() {
-      var iframe = document.getElementById("iframe1");
-      iframe.src = "https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed"; // URL của mặt thiệp mời thứ 1
+      // Thêm hiệu ứng chuyển động quay lại
+      var iframeContainer = document.getElementById("iframe-container-1");
+      iframeContainer.style.transform = "translateX(0%)"; // Lướt về vị trí ban đầu
+      setTimeout(function() {
+        // Sau khi chuyển động xong, thay đổi src của iframe
+        var iframe = document.getElementById("iframe1");
+        iframe.src = "https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed"; // URL của mặt thiệp mời thứ 1
+      }, 500); // Chờ hiệu ứng lướt hết rồi mới thay đổi src
     }
   </script>
 
