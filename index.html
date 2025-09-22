@@ -27,85 +27,91 @@
 
 /* Cột bên trái và bên phải */
 .left-column, .right-column {
-  width: 20%; /* Mỗi cột chiếm 20% chiều rộng của trang */
+  width: 20%; /* Mỗi cột chiếm 20% chiều rộng của trang trên máy tính */
   height: 100vh; /* Cột chiếm 100% chiều cao màn hình */
-  padding: 0; /* Xóa padding để không có khoảng cách dư thừa */
-  margin: 0; /* Đảm bảo không có margin tạo khoảng cách */
+  padding: 0;
+  margin: 0;
   color: white;
   text-align: center;
-  cursor: pointer; /* Hiển thị con trỏ khi người dùng di chuột qua */
-  overflow: hidden; /* Ẩn bất kỳ phần video nào vượt quá cột */
-  border: none; /* Đảm bảo không có viền */
+  cursor: pointer;
+  overflow: hidden;
+  border: none;
 }
 
 /* Cột giữa chứa iframe */
 .iframe-container {
-  width: 60%; /* Cột giữa chiếm 60% chiều rộng của trang */
+  width: 60%; /* Cột giữa chiếm 60% chiều rộng của trang trên máy tính */
   height: 100vh; /* Chiều cao là 100% chiều cao của màn hình */
-  background-color: #fff; /* Nền sáng cho khu vực chứa iframe */
+  background-color: #fff;
   display: flex;
-  justify-content: center; /* Canh giữa nội dung bên trong */
-  align-items: center; /* Canh giữa nội dung theo chiều dọc */
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 0;
-  box-sizing: border-box; /* Đảm bảo tính toán chiều rộng và chiều cao đúng */
+  box-sizing: border-box;
 }
 
-/* Iframe bên trong */
-iframe {
-  width: 100%; /* Đảm bảo iframe chiếm 100% chiều rộng của .iframe-container */
-  height: 80vh; /* Chiều cao của iframe chiếm 80% chiều cao của màn hình */
-  border: none; /* Xóa viền của iframe */
-}
-
-/* Điều chỉnh cho màn hình máy tính lớn */
+/* Điều chỉnh cho màn hình máy tính lớn (lớn hơn 1025px) */
 @media (min-width: 1025px) {
-  .left-column, .right-column {
-    width: 20%; /* Cột chiếm 20% chiều rộng trên màn hình máy tính */
+  .column-container {
+    display: flex; /* Căn chỉnh các cột theo chiều ngang */
+    flex-direction: row; /* Các phần tử trong .column-container sẽ xếp hàng ngang */
   }
-  
+
+  .left-column, .right-column {
+    width: 20%; /* Mỗi cột chiếm 20% chiều rộng của trang */
+    height: 100vh; /* Cột chiếm 100% chiều cao màn hình */
+  }
+
   .iframe-container {
-    width: 80%; /* Cột giữa chiếm 60% chiều rộng của màn hình */
-    height: 90vh; /* Điều chỉnh chiều cao cột giữa */
+    width: 60%; /* Cột giữa chiếm 60% chiều rộng của trang */
+    height: 100vh; /* Chiều cao 100% chiều cao màn hình */
   }
 }
 
-/* Điều chỉnh cho máy tính bảng */
+/* Điều chỉnh cho máy tính bảng và điện thoại (<= 1024px) */
 @media (max-width: 1024px) {
+  .column-container {
+    display: flex;
+    flex-direction: column; /* Các phần tử trong .column-container sẽ xếp theo chiều dọc */
+  }
+
   .left-column, .right-column {
-    width: 25%; /* Cột chiếm 25% chiều rộng trên máy tính bảng */
+    width: 100%; /* Cột chiếm 100% chiều rộng của màn hình */
+    height: 30vh; /* Cột chiếm 30% chiều cao của màn hình */
   }
 
   .iframe-container {
-    width: 50%; /* Cột giữa chiếm 50% chiều rộng của màn hình */
-    height: 80vh; /* Điều chỉnh chiều cao của iframe */
+    width: 100%; /* Cột giữa chiếm 100% chiều rộng của màn hình */
+    height: 40vh; /* Cột giữa chiếm 40% chiều cao của màn hình */
   }
 }
 
 /* Điều chỉnh cho điện thoại di động */
 @media (max-width: 768px) {
   .left-column, .right-column {
-    width: 30%; /* Cột chiếm 30% chiều rộng trên màn hình điện thoại */
+    width: 100%; /* Mỗi cột chiếm 100% chiều rộng của màn hình */
+    height: 30vh; /* Mỗi cột chiếm 30% chiều cao của màn hình */
   }
 
   .iframe-container {
-    width: 40%; /* Cột giữa chiếm 40% chiều rộng của màn hình */
-    height: 70vh; /* Điều chỉnh chiều cao iframe */
+    width: 100%; /* Cột giữa chiếm 100% chiều rộng của màn hình */
+    height: 40vh; /* Cột giữa chiếm 40% chiều cao của màn hình */
   }
 }
 
 /* Điều chỉnh cho điện thoại nhỏ */
 @media (max-width: 480px) {
   .left-column, .right-column {
-    width: 40%; /* Cột chiếm 40% chiều rộng cho điện thoại nhỏ */
+    width: 100%; /* Mỗi cột chiếm 100% chiều rộng của màn hình */
+    height: 30vh; /* Mỗi cột chiếm 30% chiều cao của màn hình */
   }
 
   .iframe-container {
-    width: 50%; /* Cột giữa chiếm 50% chiều rộng của màn hình */
-    height: 60vh; /* Điều chỉnh chiều cao iframe */
+    width: 100%; /* Cột giữa chiếm 100% chiều rộng của màn hình */
+    height: 40vh; /* Cột giữa chiếm 40% chiều cao của màn hình */
   }
 }
-
 
 
 .invitation-title {
