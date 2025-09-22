@@ -84,19 +84,65 @@
 
     /* Nút chuyển trang */
     .next-button, .prev-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 10px 20px;
-      background-color: #000000; /* Đổi màu nền thành đen */
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 18px;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s, color 0.3s; /* Thêm hiệu ứng chuyển màu mượt mà */
-    }
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  background-color: #000000; /* Đổi màu nền thành đen */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px; /* Kích thước chữ */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, color 0.3s; /* Thêm hiệu ứng chuyển màu mượt mà */
+}
+
+.next-button:hover, .prev-button:hover {
+  background-color: white; /* Màu nền thành trắng khi hover */
+  color: black; /* Màu chữ thành đen khi hover */
+}
+
+/* Nút tiếp theo bên phải */
+.next-button {
+  right: 10px;
+}
+
+/* Nút quay lại bên trái */
+.prev-button {
+  left: 10px;
+}
+
+/* Tùy chỉnh cho máy tính (màn hình lớn) */
+@media (min-width: 1025px) {
+  .next-button, .prev-button {
+    padding: 12px 24px; /* Điều chỉnh padding cho nút trên màn hình lớn */
+    font-size: 20px; /* Kích thước chữ lớn hơn */
+  }
+}
+
+/* Tùy chỉnh cho máy tính bảng */
+@media (max-width: 1024px) {
+  .next-button, .prev-button {
+    padding: 10px 18px; /* Điều chỉnh padding cho máy tính bảng */
+    font-size: 16px; /* Giảm kích thước chữ cho máy tính bảng */
+  }
+}
+
+/* Tùy chỉnh cho điện thoại di động */
+@media (max-width: 768px) {
+  .next-button, .prev-button {
+    padding: 8px 16px; /* Điều chỉnh padding cho điện thoại */
+    font-size: 14px; /* Giảm kích thước chữ cho điện thoại */
+  }
+}
+
+@media (max-width: 480px) {
+  .next-button, .prev-button {
+    padding: 6px 14px; /* Giảm padding cho điện thoại nhỏ */
+    font-size: 12px; /* Giảm kích thước chữ cho điện thoại nhỏ */
+  }
+}
 
     .next-button:hover, .prev-button:hover {
       background-color: white; /* Màu nền thành trắng khi hover */
