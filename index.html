@@ -120,7 +120,7 @@
   <div class="column-container">
     <!-- Cột bên trái chứa video -->
     <div class="left-column">
-      <video width="100%" controls>
+      <video width="100%" height="100vh" autoplay muted loop>
         <source src="/Thiệp%20làm%20hiệu%20ứng.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -129,14 +129,13 @@
     <!-- Cột giữa chứa iframe -->
     <div class="iframe-container">
       <iframe id="iframe1" src="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+      <div class="right-column">
+      <video width="100%" height="100vh" autoplay muted loop>
+        <source src="/Thiệp%20làm%20hiệu%20ứng.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
-
-    <!-- Cột bên phải chứa liên kết đến video -->
-    <a href="/Thiệp%20làm%20hiệu%20ứng.mp4" class="right-column" target="_blank">
-      <p>Link đến Thiệp làm hiệu ứng</p>
-    </a>
-  </div>
-
+    
   <!-- Nút nhấn để chuyển sang mặt thiệp mời thứ 2 -->
   <button class="next-button" onclick="switchToSecondPage()">Mặt thiệp mời thứ 2</button>
 
