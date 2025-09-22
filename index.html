@@ -17,16 +17,18 @@
       box-sizing: border-box; /* Giúp tính toán kích thước chính xác */
     }
 
-    /* Khối chứa các cột bên trái và bên phải */
-    .column-container {
-      display: flex;
-      justify-content: space-between;
-      height: 100vh;
-    }
+   /* Khối chứa các cột bên trái và bên phải */
+.column-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Đảm bảo chiều rộng chiếm toàn bộ chiều rộng của trang */
+  height: 100vh; /* Chiều cao của toàn bộ trang */
+}
+
 /* Cột bên trái và bên phải */
 .left-column, .right-column {
-  width: 400px; /* Giảm chiều rộng xuống còn 10% của trang */
-  height: 90vh; /* Điều chỉnh chiều cao cột để không chiếm toàn bộ chiều cao */
+  width: 20%; /* Cột trái và phải chiếm 20% chiều rộng mỗi cột */
+  height: 90vh; /* Chiều cao cột 90% của chiều cao màn hình */
   padding: 0; /* Xóa padding để không có khoảng cách dư thừa */
   margin: 0; /* Đảm bảo không có margin tạo khoảng cách */
   color: white;
@@ -35,10 +37,11 @@
   overflow: hidden; /* Ẩn bất kỳ phần video nào vượt quá cột */
   border: none; /* Đảm bảo không có viền */
 }
-    /* Cột giữa chứa iframe */
-    .iframe-container {
-  width: 2200px; /* Chiếm 60% chiều rộng của trang */
-  height: 90vh; /* Chiều cao là 80% chiều cao của màn hình */
+
+/* Cột giữa chứa iframe */
+.iframe-container {
+  width: 80%; /* Cột giữa chiếm 80% chiều rộng của trang */
+  height: 90vh; /* Chiều cao là 90% chiều cao của màn hình */
   background-color: #f0f0f0; /* Nền sáng cho khu vực chứa iframe */
   display: flex;
   justify-content: center; /* Canh giữa nội dung bên trong */
@@ -47,6 +50,7 @@
   margin: 0;
   box-sizing: border-box; /* Đảm bảo tính toán chiều rộng và chiều cao đúng */
 }
+
 .invitation-title {
   font-family: 'RQND Pro', sans-serif;
   text-align: center;
