@@ -91,33 +91,52 @@
       left: 10px;
     }
 
-    /* Điều chỉnh độ lớn iframe trên các màn hình khác nhau */
+    /* --------------------------------------------- */
+    /* Tối ưu hóa cho máy tính */
+    /* --------------------------------------------- */
+    @media (min-width: 1025px) {
+      .left-column, .right-column {
+        width: 20%; /* Cột chiếm 20% chiều rộng trên máy tính */
+      }
+
+      .iframe-container {
+        width: 60%; /* Cột giữa chiếm 60% chiều rộng */
+      }
+
+      .next-button, .prev-button {
+        font-size: 2vw; /* Kích thước nút chuyển trang */
+      }
+
+      .invitation-title {
+        font-size: 6vw; /* Kích thước font cho tiêu đề */
+      }
+    }
+
+    /* --------------------------------------------- */
+    /* Tối ưu hóa cho máy tính bảng */
+    /* --------------------------------------------- */
     @media (max-width: 1024px) {
-      iframe {
-        height: 80vh;
+      .left-column, .right-column {
+        width: 25%; /* Chiếm 25% chiều rộng của màn hình trên máy tính bảng */
+      }
+
+      .iframe-container {
+        width: 50%; /* Chiếm 50% chiều rộng của trang */
       }
 
       .next-button, .prev-button {
         font-size: 4vw; /* Điều chỉnh font-size nút cho các thiết bị nhỏ */
       }
-    }
-
-    @media (max-width: 768px) {
-      iframe {
-        height: 70vh;
-      }
 
       .invitation-title {
-        font-size: 8vw; /* Điều chỉnh font-size cho thiết bị di động */
-      }
-
-      .next-button, .prev-button {
-        font-size: 5vw; /* Điều chỉnh font-size nút cho màn hình nhỏ */
+        font-size: 8vw; /* Điều chỉnh font-size cho máy tính bảng */
       }
     }
 
-    /* Điều chỉnh độ rộng các cột khi màn hình nhỏ hơn */
-    @media (max-width: 1024px) {
+    /* --------------------------------------------- */
+    /* Tối ưu hóa cho điện thoại di động */
+    /* --------------------------------------------- */
+    @media (max-width: 768px) {
       .left-column, .right-column {
         display: none; /* Ẩn cột bên trái và phải trên màn hình nhỏ */
       }
@@ -125,11 +144,22 @@
       .iframe-container {
         width: 100%; /* Chiếm toàn bộ chiều rộng */
       }
+
+      .next-button, .prev-button {
+        font-size: 5vw; /* Điều chỉnh font-size nút cho màn hình di động */
+      }
+
+      .invitation-title {
+        font-size: 10vw; /* Điều chỉnh font-size cho điện thoại */
+      }
     }
 
+    /* --------------------------------------------- */
+    /* Tối ưu hóa cho điện thoại nhỏ */
+    /* --------------------------------------------- */
     @media (max-width: 480px) {
       .invitation-title {
-        font-size: 10vw; /* Điều chỉnh font-size cho thiết bị di động nhỏ */
+        font-size: 12vw; /* Điều chỉnh font-size cho điện thoại nhỏ */
       }
     }
   </style>
