@@ -45,7 +45,7 @@
       height: 100%;
       border: none;
       opacity: 1;
-      transition: opacity 1s ease;
+      transition: opacity 0.5s ease; /* Thêm hiệu ứng mờ dần khi chuyển đổi */
     }
 
     /* Tiêu đề và lời mời */
@@ -124,10 +124,12 @@
   </style>
 </head>
 <body>
+
   <!-- Tiêu đề và lời mời -->
   <div class="invitation-title">
     Thiệp Mời Kỉ Niệm 15 Năm
   </div>
+
   <!-- Trang 1: iframe chứa bản thiết kế từ Canva -->
   <div class="container" id="iframe-container-1">
     <iframe id="iframe1" src="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
@@ -141,7 +143,7 @@
 
   <!-- Liên kết thêm thông tin -->
   <div class="link-text">
-    <a href="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?utm_content=DAGzTCVK570&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener"></a>
+    <a href="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?utm_content=DAGzTCVK570&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Xem Bản Thiệp Mời</a>
   </div>
 
   <script>
@@ -163,7 +165,7 @@
         // Hiển thị iframe và hiệu ứng mờ dần
         iframe.style.opacity = 1;
         iframeContainer.style.transform = "translateX(0%)"; // Quay về vị trí ban đầu
-      }, 800); // Chờ hiệu ứng lướt hết rồi mới thay đổi src
+      }, 1000); // Chờ hiệu ứng lướt hết rồi mới thay đổi src
     }
 
     // Hàm quay lại mặt thiệp mời thứ 1
@@ -184,7 +186,7 @@
         // Hiển thị iframe và hiệu ứng mờ dần
         iframe.style.opacity = 1;
         iframeContainer.style.transform = "translateX(0%)"; // Quay về vị trí ban đầu
-      }, 800); // Chờ hiệu ứng lướt hết rồi mới thay đổi src
+      }, 1000); // Chờ hiệu ứng lướt hết rồi mới thay đổi src
     }
   </script>
 
