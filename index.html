@@ -11,9 +11,9 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden; /* Loại bỏ thanh cuộn ngang và dọc */
+      overflow-x: hidden;
       font-family: Arial, sans-serif;
-      box-sizing: border-box;
+      box-sizing: border-box; /* Giúp tính toán kích thước chính xác */
     }
 
     /* Đảm bảo video nền chiếm toàn bộ màn hình */
@@ -31,7 +31,7 @@
     .container {
       position: relative;
       width: 100%;
-      height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+      height: 2000px; /* Đặt chiều cao cố định cho các thiết bị lớn, bạn có thể điều chỉnh */
       margin: 0;
       padding: 0;
       box-shadow: none;
@@ -40,8 +40,59 @@
 
     iframe {
       width: 100%;
+      height: 2000px; /* Chiều cao của iframe được đặt cố định */
       border: none;
-      height: 100%; /* Chiếm toàn bộ chiều cao của phần tử chứa */
+    }
+
+    /* Điều chỉnh kích thước iframe cho các thiết bị khác nhau */
+    /* Màn hình 4K */
+    @media (max-width: 3840px) {
+      .container {
+        height: 1800px; /* Chiều cao giảm cho màn hình 4K */
+      }
+      iframe {
+        height: 1800px;
+      }
+    }
+
+    /* Màn hình 2K */
+    @media (max-width: 2560px) {
+      .container {
+        height: 1600px; /* Chiều cao giảm cho màn hình 2K */
+      }
+      iframe {
+        height: 1600px;
+      }
+    }
+
+    /* Màn hình Full HD */
+    @media (max-width: 1920px) {
+      .container {
+        height: 1400px; /* Chiều cao giảm cho màn hình Full HD */
+      }
+      iframe {
+        height: 1400px;
+      }
+    }
+
+    /* Máy tính bảng (iPad) */
+    @media (max-width: 1024px) {
+      .container {
+        height: 1200px; /* Chiều cao giảm cho iPad */
+      }
+      iframe {
+        height: 1200px;
+      }
+    }
+
+    /* Thiết bị di động */
+    @media (max-width: 768px) {
+      .container {
+        height: 1000px; /* Chiều cao giảm cho điện thoại di động */
+      }
+      iframe {
+        height: 1000px;
+      }
     }
 
   </style>
@@ -63,33 +114,6 @@
   <div class="container" id="iframe-container-2">
     <iframe id="iframe2" src="https://www.canva.com/design/DAGzUDV-HjQ/21minuCM_u54x-7zSqFogA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
   </div>
-
-  <script>
-    // JavaScript để điều chỉnh kích thước iframe cho phù hợp với màn hình
-    function adjustIframeSize() {
-      // Lấy kích thước của cửa sổ trình duyệt
-      var width = window.innerWidth;
-      var height = window.innerHeight;
-
-      // Lấy các iframe
-      var iframe1 = document.getElementById('iframe1');
-      var iframe2 = document.getElementById('iframe2');
-
-      // Cập nhật chiều cao và chiều rộng của các iframe
-      iframe1.style.height = height + 'px';
-      iframe2.style.height = height + 'px';
-    }
-
-    // Gọi hàm khi tải trang và khi thay đổi kích thước cửa sổ
-    window.onload = adjustIframeSize;
-    window.onresize = adjustIframeSize;
-
-    // Khoá cửa sổ trình duyệt để không thay đổi kích thước
-    document.addEventListener("DOMContentLoaded", function() {
-      document.documentElement.style.overflow = "hidden"; // Ngăn cuộn trang
-      document.body.style.overflow = "hidden"; // Ngăn cuộn trang
-    });
-  </script>
 
 </body>
 </html>
