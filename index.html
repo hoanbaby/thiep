@@ -1,5 +1,3 @@
-# Saving the HTML content to a file
-html_content = """
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -7,88 +5,21 @@ html_content = """
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thiệp mời kỉ niệm 15 năm</title>
   <style>
-    /* Đảm bảo phần tử html và body chiếm toàn bộ chiều rộng và chiều cao */
-    /* Đảm bảo phần tử html và body chiếm toàn bộ chiều rộng và chiều cao trên tất cả các thiết bị */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%; /* Chiếm toàn bộ chiều rộng của màn hình */
-  height: 100%; /* Chiếm toàn bộ chiều cao của màn hình */
-  overflow-x: hidden; /* Loại bỏ thanh cuộn ngang */
-  font-family: Arial, sans-serif;
-  background-color: #fff; /* Màu nền sáng */
-  box-sizing: border-box; /* Giúp tính toán kích thước chính xác */
-}
-
-/* Điều chỉnh cho tất cả các thiết bị từ điện thoại đến máy tính */
-@media (max-width: 768px) {
-  html, body {
-    height: 100%; /* Đảm bảo chiều cao luôn 100% */
-    width: 100%; /* Đảm bảo chiều rộng luôn 100% */
-    overflow-y: scroll; /* Cho phép cuộn dọc nếu cần thiết */
-  }
-}
-
-/* Điều chỉnh cho iPad và máy tính bảng (từ 768px đến 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  html, body {
-    height: 100%; /* Đảm bảo chiều cao luôn 100% */
-    width: 100%; /* Đảm bảo chiều rộng luôn 100% */
-    overflow-y: scroll; /* Cho phép cuộn dọc nếu cần thiết */
-  }
-}
-
-/* Điều chỉnh cho điện thoại nhỏ (<= 480px) ở chế độ ngang */
-@media (max-width: 480px) and (orientation: landscape) {
-  html, body {
-    height: 40%; /* Đảm bảo chiều cao luôn 100% */
-    width: 100%; /* Đảm bảo chiều rộng luôn 100% */
-    overflow-y: scroll; /* Cho phép cuộn dọc nếu cần thiết */
-  }
-}
-
-/* Điều chỉnh cho tất cả các thiết bị di động ở chế độ dọc */
-@media (max-width: 768px) and (orientation: portrait) {
-  html, body {
-    height: 50%; /* Đảm bảo chiều cao luôn 100% */
-    width: 100%; /* Đảm bảo chiều rộng luôn 100% */
-    overflow-y: scroll; /* Cho phép cuộn dọc nếu cần thiết */
-  }
-}
-
-/* Điều chỉnh cho các thiết bị màn hình lớn (máy tính để bàn) */
-@media (min-width: 1025px) {
-  html, body {
-    height: 100%; /* Đảm bảo chiều cao luôn 100% */
-    width: 100%; /* Đảm bảo chiều rộng luôn 100% */
-  }
-}
-
-    /* Khối chứa các cột bên trái, giữa và bên phải */
-    .column-container {
-      display: flex;
-      justify-content: space-between; /* Căn chỉnh các cột trái, giữa và phải */
-      width: 100%; /* Chiếm toàn bộ chiều rộng của trang */
-      height: 100vh; /* Chiều cao của toàn bộ trang */
-    }
-
-    /* Cột bên trái và bên phải */
-    .left-column, .right-column {
-      width: 20%; /* Cột chiếm 20% chiều rộng của trang trên máy tính */
-      height: 100vh; /* Cột chiếm 100% chiều cao màn hình */
-      padding: 0;
+    html, body {
       margin: 0;
-      color: white;
-      text-align: center;
-      cursor: pointer;
-      overflow: hidden;
-      border: none;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      box-sizing: border-box;
     }
 
     /* Cột giữa chứa iframe */
     .iframe-container {
-      width: 60%; /* Cột giữa chiếm 60% chiều rộng của trang trên máy tính */
-      height: 100vh; /* Chiều cao là 100% chiều cao của màn hình */
+      width: 100%; /* Chiếm toàn bộ chiều rộng */
+      height: 100vh; /* Chiều cao của màn hình */
       background-color: #fff;
       display: flex;
       justify-content: center;
@@ -98,199 +29,54 @@ html, body {
       box-sizing: border-box;
     }
 
-    /* Điều chỉnh cho màn hình máy tính lớn (lớn hơn 1025px) */
-    @media (min-width: 1025px) {
-      .column-container {
-        display: flex; /* Căn chỉnh các cột theo chiều ngang */
-        flex-direction: row; /* Các phần tử trong .column-container sẽ xếp hàng ngang */
-        justify-content: space-between;
-        width: 100%;
-        height: 100vh; /* Chiều cao của container chiếm toàn bộ chiều cao màn hình */
-      }
-
-      .left-column, .right-column {
-        width: 20%; /* Mỗi cột chiếm 20% chiều rộng của trang */
-        height: 100vh; /* Cột chiếm 100% chiều cao màn hình */
-      }
-
-      .iframe-container {
-        width: 60%; /* Cột giữa chiếm 60% chiều rộng của trang */
-        height: 100vh; /* Chiều cao 100% chiều cao màn hình */
-      }
-    }
-
-    /* Điều chỉnh cho máy tính bảng */
-    @media (max-width: 1024px) {
-      .column-container {
-        display: flex;
-        flex-direction: column; /* Các phần tử trong .column-container sẽ xếp theo chiều dọc */
-        justify-content: space-between;
-      }
-
-      .left-column, .right-column {
-        width: 100%; /* Mỗi cột chiếm 100% chiều rộng của màn hình */
-        height: 30vh; /* Mỗi cột chiếm 30% chiều cao của màn hình */
-      }
-
-      .iframe-container {
-        width: 100%; /* Cột giữa chiếm 100% chiều rộng của màn hình */
-        height: 40vh; /* Cột giữa chiếm 40% chiều cao của màn hình */
-      }
-    }
-
-  /* Điều chỉnh cho điện thoại di động (chiều dọc và ngang) */
-@media (max-width: 768px) {
-  /* Sắp xếp lại các cột bên trái và phải theo chiều dọc (top và bottom) */
-  .column-container {
-    display: flex;
-    flex-direction: column; /* Các phần tử trong column-container xếp theo chiều dọc */
-    justify-content: flex-start; /* Canh chỉnh các cột từ trên xuống dưới */
-    height: 100%; /* Đảm bảo chiều cao của container chiếm toàn bộ màn hình */
-  }
-
-  /* Cột bên trái (left-column) */
-  .left-column {
-    width: 100%; /* Cột chiếm toàn bộ chiều rộng của màn hình */
-    height: 30vh; /* Cột chiếm 30% chiều cao của màn hình */
-  }
-
-  /* Cột giữa (iframe-container) */
-  .iframe-container {
-    width: 100%; /* Cột giữa chiếm 100% chiều rộng của màn hình */
-    height: 40vh; /* Cột giữa chiếm 40% chiều cao của màn hình */
-  }
-
-  /* Cột bên phải (right-column) */
-  .right-column {
-    width: 100%; /* Cột chiếm toàn bộ chiều rộng của màn hình */
-    height: 30vh; /* Cột chiếm 30% chiều cao của màn hình */
-  }
-}
-
-/* Điều chỉnh cho điện thoại nhỏ (<= 480px) */
-@media (max-width: 480px) {
-  /* Cột bên trái (left-column) */
-  .left-column {
-    width: 100%; /* Cột chiếm toàn bộ chiều rộng của màn hình */
-    height: 30vh; /* Cột chiếm 30% chiều cao của màn hình */
-  }
-
-  /* Cột giữa (iframe-container) */
-  .iframe-container {
-    width: 100%; /* Cột giữa chiếm 100% chiều rộng của màn hình */
-    height: 40vh; /* Cột giữa chiếm 40% chiều cao của màn hình */
-  }
-
-  /* Cột bên phải (right-column) */
-  .right-column {
-    width: 100%; /* Cột chiếm toàn bộ chiều rộng của màn hình */
-    height: 30vh; /* Cột chiếm 30% chiều cao của màn hình */
-  }
-}
-
-
-    /* Tiêu đề và lời mời */
     .invitation-title {
       font-family: 'RQND Pro', sans-serif;
       text-align: center;
       padding-top: 20px;
       padding-bottom: 10px;
-      font-size: 2vw; /* Dùng vw để font tự động thay đổi theo kích thước màn hình */
+      font-size: 2vw;
       font-weight: bold;
-      color: white; /* Text color is white */
-      background-color: #082460; /* Updated background color */
+      color: white;
+      background-color: #082460;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-      white-space: normal; /* Cho phép chữ xuống dòng nếu cần thiết */
-      line-height: 1.2; /* Điều chỉnh độ cao dòng để văn bản không bị chật */
-      max-width: 100%; /* Đảm bảo tiêu đề không vượt quá chiều rộng của phần tử chứa */
+      white-space: normal;
+      line-height: 1.2;
+      max-width: 100%;
     }
 
-    /* Điều chỉnh kích thước font cho các thiết bị nhỏ hơn */
-    @media (max-width: 1024px) {
-      .invitation-title {
-        font-size: 10vw; /* Tăng kích thước font cho các thiết bị máy tính bảng */
-      }
-    }
-
-    @media (max-width: 768px) {
-      .invitation-title {
-        font-size: 8vw; /* Điều chỉnh lại font-size cho màn hình điện thoại */
-      }
-    }
-
-    @media (max-width: 480px) {
-      .invitation-title {
-        font-size: 4vw; /* Điều chỉnh cho điện thoại nhỏ */
-      }
-    }
-
-    /* Nút chuyển trang */
     .next-button, .prev-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       padding: 10px 20px;
-      background-color: #000000; /* Đổi màu nền thành đen */
+      background-color: #000000;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 18px; /* Kích thước chữ */
+      font-size: 18px;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s, color 0.3s; /* Thêm hiệu ứng chuyển màu mượt mà */
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .next-button:hover, .prev-button:hover {
-      background-color: white; /* Màu nền thành trắng khi hover */
-      color: black; /* Màu chữ thành đen khi hover */
+      background-color: white;
+      color: black;
     }
 
-    /* Nút tiếp theo bên phải */
     .next-button {
-      right: 10px;
+      bottom: 20px;
     }
 
-    /* Nút quay lại bên trái */
     .prev-button {
-      left: 10px;
+      bottom: 20px;
     }
 
-    /* Tùy chỉnh cho máy tính (màn hình lớn) */
-    @media (min-width: 1025px) {
-      .next-button, .prev-button {
-        padding: 12px 24px; /* Điều chỉnh padding cho nút trên màn hình lớn */
-        font-size: 20px; /* Kích thước chữ lớn hơn */
-      }
-    }
-
-    /* Tùy chỉnh cho máy tính bảng */
-    @media (max-width: 1024px) {
-      .next-button, .prev-button {
-        padding: 10px 18px; /* Điều chỉnh padding cho máy tính bảng */
-        font-size: 16px; /* Giảm kích thước chữ cho máy tính bảng */
-      }
-    }
-
-    /* Tùy chỉnh cho điện thoại di động */
     @media (max-width: 768px) {
       .next-button, .prev-button {
-        padding: 4px 8px; /* Điều chỉnh padding cho điện thoại */
-        font-size: 14px; /* Giảm kích thước chữ cho điện thoại */
-        position: fixed; /* Cố định nút ở dưới cùng màn hình */
-        bottom: 20px; /* Cách dưới cùng màn hình 20px */
-        left: 50%; /* Canh giữa nút */
-        transform: translateX(-50%); /* Đảm bảo nút được canh giữa hoàn hảo */
-      }
-    }
-
-    @media (max-width: 480px) {
-      .next-button, .prev-button {
-        padding: 3px 7px; /* Giảm padding cho điện thoại nhỏ */
-        font-size: 12px; /* Giảm kích thước chữ cho điện thoại nhỏ */
-        position: fixed; /* Cố định nút ở dưới cùng màn hình */
-        bottom: 15px; /* Cách dưới cùng màn hình 15px */
-        left: 50%; /* Canh giữa nút */
-        transform: translateX(-50%); /* Đảm bảo nút được canh giữa hoàn hảo */
+        padding: 4px 8px;
+        font-size: 14px;
       }
     }
   </style>
@@ -301,28 +87,9 @@ html, body {
     Thiệp Mời Kỉ Niệm 15 Năm
   </div>
 
-  <!-- Cột chứa iframe với 2 cột bên trái và phải -->
-  <div class="column-container">
-    <!-- Cột bên trái chứa video -->
-    <div class="left-column">
-      <video width="100%" height="100%" autoplay muted loop style="object-fit: cover;">
-        <source src="/Thiệp%20làm%20hiệu%20ứng.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
-    <!-- Cột giữa chứa iframe -->
-    <div class="iframe-container">
-      <iframe id="iframe1" src="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
-    </div>
-
-    <!-- Cột bên phải chứa video -->
-    <div class="right-column">
-      <video width="100%" height="100%" autoplay muted loop style="object-fit: cover;">
-        <source src="/Thiệp%20làm%20hiệu%20ứng.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+  <!-- Cột giữa chứa iframe -->
+  <div class="iframe-container">
+    <iframe id="iframe1" src="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed" allowfullscreen="allowfullscreen"></iframe>
   </div>
 
   <!-- Nút nhấn để chuyển sang mặt thiệp mời thứ 2 -->
@@ -332,13 +99,11 @@ html, body {
   <button class="prev-button" onclick="switchToFirstPage()">Mặt thiệp mời thứ 1</button>
 
   <script>
-    // Hàm chuyển sang mặt thiệp mời thứ 2
     function switchToSecondPage() {
       var iframe = document.getElementById("iframe1");
       iframe.src = "https://www.canva.com/design/DAGzUDV-HjQ/21minuCM_u54x-7zSqFogA/view?embed"; // URL của mặt thiệp mời thứ 2
     }
 
-    // Hàm quay lại mặt thiệp mời thứ 1
     function switchToFirstPage() {
       var iframe = document.getElementById("iframe1");
       iframe.src = "https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed"; // URL của mặt thiệp mời thứ 1
@@ -346,11 +111,3 @@ html, body {
   </script>
 </body>
 </html>
-"""
-
-# Save the content to an HTML file
-file_path = "/mnt/data/Invitation_Card.html"
-with open(file_path, "w") as file:
-    file.write(html_content)
-
-file_path  # Return the file path to allow the user to download it
