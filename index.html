@@ -11,9 +11,9 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow-x: hidden;
+      overflow-x: hidden; /* Loại bỏ thanh cuộn ngang */
       font-family: Arial, sans-serif;
-      box-sizing: border-box; /* Giúp tính toán kích thước chính xác */
+      box-sizing: border-box;
     }
 
     /* Đảm bảo video nền chiếm toàn bộ màn hình */
@@ -31,70 +31,61 @@
     .container {
       position: relative;
       width: 100%;
-      height: 2000px; /* Đặt chiều cao cố định cho các thiết bị lớn, bạn có thể điều chỉnh */
       margin: 0;
       padding: 0;
       box-shadow: none;
       overflow: hidden;
+      margin-bottom: 20px; /* Khoảng cách giữa các iframe */
     }
 
     iframe {
       width: 100%;
-      height: 2000px; /* Chiều cao của iframe được đặt cố định */
       border: none;
+      height: 100%;
     }
 
-    /* Điều chỉnh kích thước iframe cho các thiết bị khác nhau */
+    /* Các kích thước cho từng loại màn hình */
     /* Màn hình 4K */
     @media (max-width: 3840px) {
       .container {
-        height: 1800px; /* Chiều cao giảm cho màn hình 4K */
-      }
-      iframe {
-        height: 1800px;
+        height: 90vh; /* Chiếm 90% chiều cao màn hình */
       }
     }
 
     /* Màn hình 2K */
     @media (max-width: 2560px) {
       .container {
-        height: 1600px; /* Chiều cao giảm cho màn hình 2K */
-      }
-      iframe {
-        height: 1600px;
+        height: 85vh; /* Chiếm 85% chiều cao màn hình */
       }
     }
 
     /* Màn hình Full HD */
     @media (max-width: 1920px) {
       .container {
-        height: 1400px; /* Chiều cao giảm cho màn hình Full HD */
-      }
-      iframe {
-        height: 1400px;
+        height: 80vh; /* Chiếm 80% chiều cao màn hình */
       }
     }
 
     /* Máy tính bảng (iPad) */
     @media (max-width: 1024px) {
       .container {
-        height: 1200px; /* Chiều cao giảm cho iPad */
-      }
-      iframe {
-        height: 1200px;
+        height: 75vh; /* Chiếm 75% chiều cao màn hình */
       }
     }
 
     /* Thiết bị di động */
     @media (max-width: 768px) {
       .container {
-        height: 1000px; /* Chiều cao giảm cho điện thoại di động */
-      }
-      iframe {
-        height: 1000px;
+        height: 70vh; /* Chiếm 70% chiều cao màn hình */
       }
     }
 
+    /* Màn hình nhỏ hơn (mobile landscape) */
+    @media (max-width: 480px) {
+      .container {
+        height: 60vh; /* Chiếm 60% chiều cao màn hình */
+      }
+    }
   </style>
 </head>
 <body>
