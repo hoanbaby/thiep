@@ -27,7 +27,8 @@
   /* Cột bên trái và bên phải */
 /* Cột bên trái và bên phải */
 .left-column, .right-column {
-  width: 20%; /* Chiếm 20% chiều rộng của trang */
+  width: 10%; /* Giảm chiều rộng xuống còn 10% của trang */
+  height: 90vh; /* Điều chỉnh chiều cao cột để không chiếm toàn bộ chiều cao */
   padding: 0; /* Xóa padding để không có khoảng cách dư thừa */
   margin: 0; /* Đảm bảo không có margin tạo khoảng cách */
   color: white;
@@ -40,36 +41,32 @@
 /* Điều chỉnh cho màn hình máy tính lớn */
 @media (min-width: 1025px) {
   .left-column, .right-column {
-    width: 20%; /* Cột chiếm 20% chiều rộng trên màn hình máy tính */
-    padding: 0; /* Đảm bảo không có padding */
-    margin: 0; /* Đảm bảo không có margin */
+    width: 10%; /* Cột chiếm 10% chiều rộng trên màn hình máy tính */
+    height: 90vh; /* Giữ chiều cao cột là 90% */
   }
 }
 
 /* Điều chỉnh cho máy tính bảng */
 @media (max-width: 1024px) {
   .left-column, .right-column {
-    width: 25%; /* Cột chiếm 25% chiều rộng trên máy tính bảng */
-    padding: 0; /* Đảm bảo không có padding */
-    margin: 0; /* Đảm bảo không có margin */
+    width: 15%; /* Cột chiếm 15% chiều rộng trên máy tính bảng */
+    height: 80vh; /* Giảm chiều cao cột xuống 80% */
   }
 }
 
 /* Điều chỉnh cho điện thoại di động */
 @media (max-width: 768px) {
   .left-column, .right-column {
-    width: 30%; /* Cột chiếm 30% chiều rộng trên màn hình điện thoại */
-    padding: 0; /* Đảm bảo không có padding */
-    margin: 0; /* Đảm bảo không có margin */
+    width: 20%; /* Cột chiếm 20% chiều rộng trên màn hình điện thoại */
+    height: 70vh; /* Giảm chiều cao cột xuống 70% */
   }
 }
 
 /* Điều chỉnh cho điện thoại nhỏ */
 @media (max-width: 480px) {
   .left-column, .right-column {
-    width: 40%; /* Cột chiếm 40% chiều rộng cho điện thoại nhỏ */
-    padding: 0; /* Đảm bảo không có padding */
-    margin: 0; /* Đảm bảo không có margin */
+    width: 30%; /* Cột chiếm 30% chiều rộng cho điện thoại nhỏ */
+    height: 60vh; /* Giảm chiều cao cột xuống 60% */
   }
 }
 
