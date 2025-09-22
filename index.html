@@ -79,10 +79,9 @@
     }
 
     /* Nút chuyển trang */
-    .next-button {
+    .next-button, .prev-button {
       position: absolute;
       top: 50%;
-      right: 10px;
       transform: translateY(-50%);
       padding: 10px 20px;
       background-color: #ff7f50;
@@ -94,8 +93,18 @@
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     }
 
-    .next-button:hover {
+    .next-button:hover, .prev-button:hover {
       background-color: #ff6347;
+    }
+
+    /* Nút tiếp theo bên phải */
+    .next-button {
+      right: 10px;
+    }
+
+    /* Nút quay lại bên trái */
+    .prev-button {
+      left: 10px;
     }
 
     /* Điều chỉnh độ lớn iframe trên các màn hình khác nhau */
@@ -113,7 +122,21 @@
 </head>
 <body>
 
-   <!-- Trang 1: iframe chứa bản thiết kế từ Canva -->
+  <!-- Video làm nền -->
+  <video class="video-background" autoplay loop muted>
+    <source src="https://www.example.com/path/to/your/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Tiêu đề và lời mời -->
+  <div class="invitation-title">
+    Thiệp Mời Kỉ Niệm 15 Năm
+  </div>
+  <div class="invitation-text">
+    Chúng tôi rất hân hạnh mời bạn tham gia vào sự kiện đặc biệt này!
+  </div>
+
+  <!-- Trang 1: iframe chứa bản thiết kế từ Canva -->
   <div class="container" id="iframe-container-1">
     <iframe id="iframe1" src="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
   </div>
@@ -121,16 +144,25 @@
   <!-- Nút nhấn để chuyển sang mặt thiệp mời thứ 2 -->
   <button class="next-button" onclick="switchToSecondPage()">Mặt thiệp mời thứ 2</button>
 
+  <!-- Nút nhấn để quay lại mặt thiệp mời thứ 1 -->
+  <button class="prev-button" onclick="switchToFirstPage()">Mặt thiệp mời thứ 1</button>
+
   <!-- Liên kết thêm thông tin -->
   <div class="link-text">
     <a href="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?utm_content=DAGzTCVK570&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Xem Bản Thiệp Mời</a>
   </div>
 
   <script>
+    // Hàm chuyển sang mặt thiệp mời thứ 2
     function switchToSecondPage() {
-      // Thay đổi src của iframe sang mặt thiệp mời thứ 2
       var iframe = document.getElementById("iframe1");
       iframe.src = "https://www.canva.com/design/DAGzUDV-HjQ/21minuCM_u54x-7zSqFogA/view?embed"; // URL của mặt thiệp mời thứ 2
+    }
+
+    // Hàm quay lại mặt thiệp mời thứ 1
+    function switchToFirstPage() {
+      var iframe = document.getElementById("iframe1");
+      iframe.src = "https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed"; // URL của mặt thiệp mời thứ 1
     }
   </script>
 
