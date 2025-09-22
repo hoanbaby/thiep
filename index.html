@@ -52,7 +52,7 @@
       text-align: center;
       padding-top: 20px;
       padding-bottom: 10px;
-      font-size: 36px;
+      font-size: 6vw; /* Điều chỉnh font-size để tự động thay đổi kích thước dựa trên chiều rộng màn hình */
       font-weight: bold;
       color: white; /* Text color is white */
       background-color: #082460; /* Updated background color */
@@ -70,7 +70,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 18px;
+      font-size: 2vw; /* Điều chỉnh kích thước font nút dựa trên chiều rộng màn hình */
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
       transition: background-color 0.3s, color 0.3s; /* Thêm hiệu ứng chuyển màu mượt mà */
     }
@@ -95,10 +95,23 @@
       iframe {
         height: 80vh;
       }
+
+      .next-button, .prev-button {
+        font-size: 4vw; /* Điều chỉnh font-size nút cho các thiết bị nhỏ */
+      }
     }
+
     @media (max-width: 768px) {
       iframe {
         height: 70vh;
+      }
+
+      .invitation-title {
+        font-size: 8vw; /* Điều chỉnh font-size cho thiết bị di động */
+      }
+
+      .next-button, .prev-button {
+        font-size: 5vw; /* Điều chỉnh font-size nút cho màn hình nhỏ */
       }
     }
 
@@ -110,6 +123,12 @@
 
       .iframe-container {
         width: 100%; /* Chiếm toàn bộ chiều rộng */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .invitation-title {
+        font-size: 10vw; /* Điều chỉnh font-size cho thiết bị di động nhỏ */
       }
     }
   </style>
