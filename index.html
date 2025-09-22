@@ -27,7 +27,7 @@
 
 /* Cột bên trái và bên phải */
 .left-column, .right-column {
-  width: 20%; /* Mỗi cột chiếm 20% chiều rộng của trang trên máy tính */
+  width: 20%; /* Cột chiếm 20% chiều rộng của trang trên máy tính */
   height: 100vh; /* Cột chiếm 100% chiều cao màn hình */
   padding: 0;
   margin: 0;
@@ -56,6 +56,9 @@
   .column-container {
     display: flex; /* Căn chỉnh các cột theo chiều ngang */
     flex-direction: row; /* Các phần tử trong .column-container sẽ xếp hàng ngang */
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh; /* Chiều cao của container chiếm toàn bộ chiều cao màn hình */
   }
 
   .left-column, .right-column {
@@ -69,11 +72,31 @@
   }
 }
 
-/* Điều chỉnh cho máy tính bảng và điện thoại (<= 1024px) */
+/* Điều chỉnh cho máy tính bảng */
 @media (max-width: 1024px) {
   .column-container {
     display: flex;
     flex-direction: column; /* Các phần tử trong .column-container sẽ xếp theo chiều dọc */
+    justify-content: space-between;
+  }
+
+  .left-column, .right-column {
+    width: 100%; /* Mỗi cột chiếm 100% chiều rộng của màn hình */
+    height: 30vh; /* Mỗi cột chiếm 30% chiều cao của màn hình */
+  }
+
+  .iframe-container {
+    width: 100%; /* Cột giữa chiếm 100% chiều rộng của màn hình */
+    height: 40vh; /* Cột giữa chiếm 40% chiều cao của màn hình */
+  }
+}
+
+/* Điều chỉnh cho điện thoại di động */
+@media (max-width: 768px) {
+  .column-container {
+    display: flex;
+    flex-direction: column; /* Xếp các phần tử theo chiều dọc trên điện thoại */
+    justify-content: space-between;
   }
 
   .left-column, .right-column {
@@ -87,23 +110,16 @@
   }
 }
 
-/* Điều chỉnh cho điện thoại di động */
-@media (max-width: 768px) {
-  .left-column, .right-column {
-    width: 100%; /* Mỗi cột chiếm 100% chiều rộng của màn hình */
-    height: 30vh; /* Mỗi cột chiếm 30% chiều cao của màn hình */
-  }
-
-  .iframe-container {
-    width: 100%; /* Cột giữa chiếm 100% chiều rộng của màn hình */
-    height: 40vh; /* Cột giữa chiếm 40% chiều cao của màn hình */
-  }
-}
-
 /* Điều chỉnh cho điện thoại nhỏ */
 @media (max-width: 480px) {
+  .column-container {
+    display: flex;
+    flex-direction: column; /* Xếp các phần tử theo chiều dọc trên điện thoại nhỏ */
+    justify-content: space-between;
+  }
+
   .left-column, .right-column {
-    width: 100%; /* Mỗi cột chiếm 100% chiều rộng của màn hình */
+    width: 100%; /* Cột chiếm 100% chiều rộng của màn hình */
     height: 30vh; /* Mỗi cột chiếm 30% chiều cao của màn hình */
   }
 
@@ -112,7 +128,6 @@
     height: 40vh; /* Cột giữa chiếm 40% chiều cao của màn hình */
   }
 }
-
 
 .invitation-title {
   font-family: 'RQND Pro', sans-serif;
