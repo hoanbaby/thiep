@@ -22,12 +22,11 @@
       display: flex;
       justify-content: space-between;
       height: 100vh;
-      flex-wrap: wrap; /* Cho phép các phần tử trong cột chuyển sang dòng mới khi không đủ không gian */
     }
 
     /* Cột bên trái và bên phải đều chứa video */
     .left-column, .right-column {
-      width: 20%; /* Chiếm 20% chiều rộng của trang trên máy tính */
+      width: 20%; /* Chiếm 20% chiều rộng của trang */
       padding: 0;
       color: white;
       text-align: center;
@@ -53,7 +52,7 @@
       text-align: center;
       padding-top: 20px;
       padding-bottom: 10px;
-      font-size: 3.5rem; /* Điều chỉnh kích thước font cố định cho tiêu đề */
+      font-size: 36px;
       font-weight: bold;
       color: white; /* Text color is white */
       background-color: #082460; /* Updated background color */
@@ -71,7 +70,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 2vw; /* Điều chỉnh kích thước font nút dựa trên chiều rộng màn hình */
+      font-size: 18px;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
       transition: background-color 0.3s, color 0.3s; /* Thêm hiệu ứng chuyển màu mượt mà */
     }
@@ -91,75 +90,27 @@
       left: 10px;
     }
 
-    /* --------------------------------------------- */
-    /* Tối ưu hóa cho máy tính */
-    /* --------------------------------------------- */
-    @media (min-width: 1025px) {
-      .left-column, .right-column {
-        width: 20%; /* Cột chiếm 20% chiều rộng trên máy tính */
-      }
-
-      .iframe-container {
-        width: 60%; /* Cột giữa chiếm 60% chiều rộng */
-      }
-
-      .next-button, .prev-button {
-        font-size: 2vw; /* Kích thước nút chuyển trang */
-      }
-
-      .invitation-title {
-        font-size: 3.5rem; /* Kích thước font cho tiêu đề */
-      }
-    }
-
-    /* --------------------------------------------- */
-    /* Tối ưu hóa cho máy tính bảng */
-    /* --------------------------------------------- */
+    /* Điều chỉnh độ lớn iframe trên các màn hình khác nhau */
     @media (max-width: 1024px) {
-      .left-column, .right-column {
-        width: 25%; /* Chiếm 25% chiều rộng của màn hình trên máy tính bảng */
-      }
-
-      .iframe-container {
-        width: 50%; /* Chiếm 50% chiều rộng của trang */
-      }
-
-      .next-button, .prev-button {
-        font-size: 4vw; /* Điều chỉnh font-size nút cho các thiết bị nhỏ */
-      }
-
-      .invitation-title {
-        font-size: 6rem; /* Điều chỉnh font-size cho máy tính bảng */
+      iframe {
+        height: 80vh;
       }
     }
 
-    /* --------------------------------------------- */
-    /* Tối ưu hóa cho điện thoại di động */
-    /* --------------------------------------------- */
     @media (max-width: 768px) {
+      iframe {
+        height: 70vh;
+      }
+    }
+
+    /* Điều chỉnh độ rộng các cột khi màn hình nhỏ hơn */
+    @media (max-width: 1024px) {
       .left-column, .right-column {
         display: none; /* Ẩn cột bên trái và phải trên màn hình nhỏ */
       }
 
       .iframe-container {
         width: 100%; /* Chiếm toàn bộ chiều rộng */
-      }
-
-      .next-button, .prev-button {
-        font-size: 5vw; /* Điều chỉnh font-size nút cho màn hình di động */
-      }
-
-      .invitation-title {
-        font-size: 8rem; /* Điều chỉnh font-size cho điện thoại */
-      }
-    }
-
-    /* --------------------------------------------- */
-    /* Tối ưu hóa cho điện thoại nhỏ */
-    /* --------------------------------------------- */
-    @media (max-width: 480px) {
-      .invitation-title {
-        font-size: 10rem; /* Điều chỉnh font-size cho điện thoại nhỏ */
       }
     }
   </style>
