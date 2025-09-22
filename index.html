@@ -37,47 +37,6 @@
   overflow: hidden; /* Ẩn bất kỳ phần video nào vượt quá cột */
   border: none; /* Đảm bảo không có viền */
 }
-
-/* Điều chỉnh cho màn hình máy tính lớn */
-@media (min-width: 1025px) {
-  .left-column, .right-column {
-    width: 20%; /* Cột chiếm 10% chiều rộng trên màn hình máy tính */
-    height: 90vh; /* Giữ chiều cao cột là 90% */
-  }
-}
-
-/* Điều chỉnh cho máy tính bảng */
-@media (max-width: 1024px) {
-  .left-column, .right-column {
-    width: 15%; /* Cột chiếm 15% chiều rộng trên máy tính bảng */
-    height: 80vh; /* Giảm chiều cao cột xuống 80% */
-  }
-}
-
-/* Điều chỉnh cho điện thoại di động */
-@media (max-width: 768px) {
-  .left-column, .right-column {
-    width: 10%; /* Cột chiếm 20% chiều rộng trên màn hình điện thoại */
-    height: 70vh; /* Giảm chiều cao cột xuống 70% */
-  }
-}
-
-/* Điều chỉnh cho điện thoại nhỏ */
-@media (max-width: 480px) {
-  .left-column, .right-column {
-    width: 30%; /* Cột chiếm 30% chiều rộng cho điện thoại nhỏ */
-    height: 60vh; /* Giảm chiều cao cột xuống 60% */
-  }
-}
-
-/* Ẩn cột bên trái và phải trên các màn hình nhỏ hơn */
-@media (max-width: 768px) {
-  .left-column, .right-column {
-    display: none; /* Ẩn cột bên trái và phải trên màn hình nhỏ */
-  }
-}
-
-
     /* Cột giữa chứa iframe */
     .iframe-container {
   width: 120%; /* Chiếm 60% chiều rộng của trang */
