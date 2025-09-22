@@ -46,19 +46,18 @@
       border: none;
     }
 
-   .invitation-title {
+  .invitation-title {
   font-family: 'RQND Pro', sans-serif;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 10px;
-  font-size: 6vw; /* Sử dụng vw để kích thước chữ thay đổi linh hoạt */
+  font-size: 6vw; /* Dùng vw để font tự động thay đổi theo kích thước màn hình */
   font-weight: bold;
   color: white; /* Text color is white */
-  background-color: #082460; /* Background color */
+  background-color: #082460; /* Updated background color */
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-  white-space: nowrap; /* Ngăn ngừa việc xuống dòng */
-  overflow: hidden; /* Đảm bảo chữ không tràn ra ngoài */
-  text-overflow: ellipsis; /* Hiển thị dấu "..." nếu chữ quá dài */
+  white-space: normal; /* Cho phép chữ xuống dòng nếu cần thiết */
+  line-height: 1.2; /* Điều chỉnh độ cao dòng để văn bản không bị chật */
   max-width: 100%; /* Đảm bảo tiêu đề không vượt quá chiều rộng của phần tử chứa */
 }
 
