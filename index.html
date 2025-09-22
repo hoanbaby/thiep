@@ -195,16 +195,25 @@ iframe {
 @media (max-width: 768px) {
   .next-button, .prev-button {
     padding: 4px 8px; /* Điều chỉnh padding cho điện thoại */
-    font-size: 4px; /* Giảm kích thước chữ cho điện thoại */
+    font-size: 14px; /* Giảm kích thước chữ cho điện thoại */
+    position: fixed; /* Cố định nút ở dưới cùng màn hình */
+    bottom: 20px; /* Cách dưới cùng màn hình 20px */
+    left: 50%; /* Canh giữa nút */
+    transform: translateX(-50%); /* Đảm bảo nút được canh giữa hoàn hảo */
   }
 }
 
 @media (max-width: 480px) {
   .next-button, .prev-button {
     padding: 3px 7px; /* Giảm padding cho điện thoại nhỏ */
-    font-size: 3px; /* Giảm kích thước chữ cho điện thoại nhỏ */
+    font-size: 12px; /* Giảm kích thước chữ cho điện thoại nhỏ */
+    position: fixed; /* Cố định nút ở dưới cùng màn hình */
+    bottom: 15px; /* Cách dưới cùng màn hình 15px */
+    left: 50%; /* Canh giữa nút */
+    transform: translateX(-50%); /* Đảm bảo nút được canh giữa hoàn hảo */
   }
 }
+
 
     .next-button:hover, .prev-button:hover {
       background-color: white; /* Màu nền thành trắng khi hover */
