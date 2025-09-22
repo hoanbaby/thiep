@@ -45,7 +45,7 @@
       height: 100%;
       border: none;
       opacity: 1;
-      transition: opacity 0.5s ease;
+      transition: opacity 1s ease; /* Thêm hiệu ứng mờ dần khi chuyển đổi */
     }
 
     /* Tiêu đề và lời mời */
@@ -97,7 +97,6 @@
       transition: all 0.3s ease; /* Thêm hiệu ứng động */
     }
 
-    /* Hiệu ứng khi hover vào nút */
     .next-button:hover, .prev-button:hover {
       background-color: #000;
       color: #fff;
@@ -169,7 +168,7 @@
         // Hiển thị iframe và hiệu ứng mờ dần
         iframe.style.opacity = 1;
         iframeContainer.style.transform = "translateX(0%)"; // Quay về vị trí ban đầu
-      }, 800); // Chờ hiệu ứng lướt hết rồi mới thay đổi src
+      }, 1000); // Chờ hiệu ứng lướt hết rồi mới thay đổi src
     }
 
     // Hàm quay lại mặt thiệp mời thứ 1
@@ -190,7 +189,7 @@
         // Hiển thị iframe và hiệu ứng mờ dần
         iframe.style.opacity = 1;
         iframeContainer.style.transform = "translateX(0%)"; // Quay về vị trí ban đầu
-      }, 800); // Chờ hiệu ứng lướt hết rồi mới thay đổi src
+      }, 1000); // Chờ hiệu ứng lướt hết rồi mới thay đổi src
     }
   </script>
 
