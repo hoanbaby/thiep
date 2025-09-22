@@ -11,9 +11,9 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow-x: hidden; /* Loại bỏ thanh cuộn ngang */
+      overflow: hidden; /* Loại bỏ thanh cuộn ngang và dọc */
       font-family: Arial, sans-serif;
-      box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước */
+      box-sizing: border-box;
     }
 
     /* Đảm bảo video nền chiếm toàn bộ màn hình */
@@ -44,48 +44,6 @@
       height: 100%; /* Chiếm toàn bộ chiều cao của phần tử chứa */
     }
 
-    /* Các kích thước cho từng loại màn hình */
-    /* Màn hình 4K */
-    @media (max-width: 3840px) {
-      .container {
-        height: 90vh; /* Chiếm 90% chiều cao màn hình */
-      }
-    }
-
-    /* Màn hình 2K */
-    @media (max-width: 2560px) {
-      .container {
-        height: 85vh; /* Chiếm 85% chiều cao màn hình */
-      }
-    }
-
-    /* Màn hình Full HD */
-    @media (max-width: 1920px) {
-      .container {
-        height: 80vh; /* Chiếm 80% chiều cao màn hình */
-      }
-    }
-
-    /* Máy tính bảng (iPad) */
-    @media (max-width: 1024px) {
-      .container {
-        height: 75vh; /* Chiếm 75% chiều cao màn hình */
-      }
-    }
-
-    /* Thiết bị di động */
-    @media (max-width: 768px) {
-      .container {
-        height: 70vh; /* Chiếm 70% chiều cao màn hình */
-      }
-    }
-
-    /* Màn hình nhỏ hơn (mobile landscape) */
-    @media (max-width: 480px) {
-      .container {
-        height: 60vh; /* Chiếm 60% chiều cao màn hình */
-      }
-    }
   </style>
 </head>
 <body>
@@ -105,6 +63,33 @@
   <div class="container" id="iframe-container-2">
     <iframe id="iframe2" src="https://www.canva.com/design/DAGzUDV-HjQ/21minuCM_u54x-7zSqFogA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
   </div>
+
+  <script>
+    // JavaScript để điều chỉnh kích thước iframe cho phù hợp với màn hình
+    function adjustIframeSize() {
+      // Lấy kích thước của cửa sổ trình duyệt
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+
+      // Lấy các iframe
+      var iframe1 = document.getElementById('iframe1');
+      var iframe2 = document.getElementById('iframe2');
+
+      // Cập nhật chiều cao và chiều rộng của các iframe
+      iframe1.style.height = height + 'px';
+      iframe2.style.height = height + 'px';
+    }
+
+    // Gọi hàm khi tải trang và khi thay đổi kích thước cửa sổ
+    window.onload = adjustIframeSize;
+    window.onresize = adjustIframeSize;
+
+    // Khoá cửa sổ trình duyệt để không thay đổi kích thước
+    document.addEventListener("DOMContentLoaded", function() {
+      document.documentElement.style.overflow = "hidden"; // Ngăn cuộn trang
+      document.body.style.overflow = "hidden"; // Ngăn cuộn trang
+    });
+  </script>
 
 </body>
 </html>
