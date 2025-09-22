@@ -19,10 +19,14 @@
 
     /* Khối chứa các cột bên trái và bên phải */
     .column-container {
-      display: flex;
-      justify-content: space-between;
-      height: 100vh;
-    }
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;  /* Chiều cao của trang */
+  width: 100%;    /* Chiếm toàn bộ chiều rộng */
+  max-width: 1200px; /* Giới hạn chiều rộng tối đa, bạn có thể điều chỉnh giá trị này */
+  margin: 0 auto; /* Canh giữa container nếu chiều rộng không phải 100% */
+}
+
 
     /* Cột bên trái và bên phải đều chứa video */
     .left-column, .right-column {
