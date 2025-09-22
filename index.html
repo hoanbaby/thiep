@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thiệp mời kỉ niệm 15 năm</title>
+  <title>Thiệp Mời Kỉ Niệm 15 Năm</title>
   <style>
     /* Đảm bảo phần tử html và body chiếm toàn bộ chiều rộng và chiều cao */
     html, body {
@@ -11,12 +11,12 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow-x: hidden; /* Loại bỏ thanh cuộn ngang */
+      overflow: hidden; /* Loại bỏ thanh cuộn ngang */
       font-family: Arial, sans-serif;
-      box-sizing: border-box;
+      background-color: #f0f0f0; /* Màu nền sáng */
     }
 
-    /* Đảm bảo video nền chiếm toàn bộ màn hình */
+    /* Nền video chiếm toàn bộ màn hình */
     .video-background {
       position: absolute;
       top: 0;
@@ -31,59 +31,61 @@
     .container {
       position: relative;
       width: 100%;
+      height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
       margin: 0;
       padding: 0;
       box-shadow: none;
       overflow: hidden;
-      margin-bottom: 20px; /* Khoảng cách giữa các iframe */
     }
 
     iframe {
       width: 100%;
-      border: none;
       height: 100%;
+      border: none;
     }
 
-    /* Các kích thước cho từng loại màn hình */
-    /* Màn hình 4K */
-    @media (max-width: 3840px) {
-      .container {
-        height: 90vh; /* Chiếm 90% chiều cao màn hình */
-      }
+    /* Tiêu đề và lời mời */
+    .invitation-title {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 36px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     }
 
-    /* Màn hình 2K */
-    @media (max-width: 2560px) {
-      .container {
-        height: 85vh; /* Chiếm 85% chiều cao màn hình */
-      }
+    .invitation-text {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 400;
+      color: #fff;
+      margin-top: 10px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
     }
 
-    /* Màn hình Full HD */
-    @media (max-width: 1920px) {
-      .container {
-        height: 80vh; /* Chiếm 80% chiều cao màn hình */
-      }
+    .link-text {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
     }
 
-    /* Máy tính bảng (iPad) */
+    .link-text a {
+      text-decoration: none;
+      color: #ff7f50;
+      font-weight: bold;
+    }
+
+    /* Điều chỉnh độ lớn iframe trên các màn hình khác nhau */
     @media (max-width: 1024px) {
-      .container {
-        height: 75vh; /* Chiếm 75% chiều cao màn hình */
+      iframe {
+        height: 80vh;
       }
     }
-
-    /* Thiết bị di động */
     @media (max-width: 768px) {
-      .container {
-        height: 70vh; /* Chiếm 70% chiều cao màn hình */
-      }
-    }
-
-    /* Màn hình nhỏ hơn (mobile landscape) */
-    @media (max-width: 480px) {
-      .container {
-        height: 60vh; /* Chiếm 60% chiều cao màn hình */
+      iframe {
+        height: 70vh;
       }
     }
   </style>
@@ -96,14 +98,22 @@
     Your browser does not support the video tag.
   </video>
 
-  <!-- Trang 1 -->
-  <div class="container" id="iframe-container-1">
-    <iframe id="iframe1" src="https://www.canva.com/design/DAGzUKmzc1s/dsXbtrBhCfiGwfRs6pBbwA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+  <!-- Tiêu đề và lời mời -->
+  <div class="invitation-title">
+    Thiệp Mời Kỉ Niệm 15 Năm
+  </div>
+  <div class="invitation-text">
+    Chúng tôi rất hân hạnh mời bạn tham gia vào sự kiện đặc biệt này!
   </div>
 
-  <!-- Trang 2 -->
-  <div class="container" id="iframe-container-2">
-    <iframe id="iframe2" src="https://www.canva.com/design/DAGzUDV-HjQ/21minuCM_u54x-7zSqFogA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+  <!-- Trang 1: iframe chứa bản thiết kế từ Canva -->
+  <div class="container" id="iframe-container-1">
+    <iframe id="iframe1" src="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+  </div>
+
+  <!-- Liên kết thêm thông tin -->
+  <div class="link-text">
+    <a href="https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?utm_content=DAGzTCVK570&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Xem Bản Thiệp Mời</a>
   </div>
 
 </body>
