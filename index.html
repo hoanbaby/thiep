@@ -44,6 +44,8 @@
       width: 100%;
       height: 100%;
       border: none;
+      opacity: 1;
+      transition: opacity 1s ease;
     }
 
     /* Tiêu đề và lời mời */
@@ -154,25 +156,45 @@
   </div>
 
   <script>
+    // Hàm chuyển sang mặt thiệp mời thứ 2
     function switchToSecondPage() {
-      // Thêm hiệu ứng chuyển động
       var iframeContainer = document.getElementById("iframe-container-1");
+      var iframe = document.getElementById("iframe1");
+
+      // Ẩn iframe trước khi chuyển trang
+      iframe.style.opacity = 0;
+
+      // Thêm hiệu ứng chuyển động
       iframeContainer.style.transform = "translateX(-100%)"; // Lướt sang bên trái
+
       setTimeout(function() {
-        // Sau khi chuyển động xong, thay đổi src của iframe
-        var iframe = document.getElementById("iframe1");
+        // Sau khi chuyển động xong, thay đổi src của iframe và hiển thị lại iframe
         iframe.src = "https://www.canva.com/design/DAGzUDV-HjQ/21minuCM_u54x-7zSqFogA/view?embed"; // URL của mặt thiệp mời thứ 2
+
+        // Hiển thị iframe và hiệu ứng mờ dần
+        iframe.style.opacity = 1;
+        iframeContainer.style.transform = "translateX(0%)"; // Quay về vị trí ban đầu
       }, 500); // Chờ hiệu ứng lướt hết rồi mới thay đổi src
     }
 
+    // Hàm quay lại mặt thiệp mời thứ 1
     function switchToFirstPage() {
-      // Thêm hiệu ứng chuyển động quay lại
       var iframeContainer = document.getElementById("iframe-container-1");
-      iframeContainer.style.transform = "translateX(0%)"; // Lướt về vị trí ban đầu
+      var iframe = document.getElementById("iframe1");
+
+      // Ẩn iframe trước khi chuyển trang
+      iframe.style.opacity = 0;
+
+      // Thêm hiệu ứng chuyển động quay lại
+      iframeContainer.style.transform = "translateX(100%)"; // Lướt về bên phải
+
       setTimeout(function() {
-        // Sau khi chuyển động xong, thay đổi src của iframe
-        var iframe = document.getElementById("iframe1");
+        // Sau khi chuyển động xong, thay đổi src của iframe và hiển thị lại iframe
         iframe.src = "https://www.canva.com/design/DAGzTCVK570/RDXQKXWvFOyhTzCVmJPoPQ/view?embed"; // URL của mặt thiệp mời thứ 1
+
+        // Hiển thị iframe và hiệu ứng mờ dần
+        iframe.style.opacity = 1;
+        iframeContainer.style.transform = "translateX(0%)"; // Quay về vị trí ban đầu
       }, 500); // Chờ hiệu ứng lướt hết rồi mới thay đổi src
     }
   </script>
